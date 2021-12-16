@@ -1,0 +1,31 @@
+# This is a sample build configuration for PHP.
+# Check our guides at https://confluence.atlassian.com/x/e8YWN for more examples.
+# Only use spaces to indent your .yml configuration.
+# -----
+# You can specify a custom docker image from Docker Hub as your build environment.
+image: pixietrixibell/ccserver:8.0
+
+pipelines:
+  default:
+    - parallel:
+      - step:
+          name: Check coding standard
+          caches:
+            - composer
+          script:
+            - composer install --no-progress --profile --prefer-dist
+            - composer check-coding-style
+      - step:
+          name: PHPStan
+          caches:
+            - composer
+          script:
+            - composer install --no-progress --profile --prefer-dist
+            - composer phpstan
+      - step:
+          name: Run tests
+          caches:
+            - composer
+          script:
+            - composer install --no-progress --profile --prefer-dist
+            - composer test

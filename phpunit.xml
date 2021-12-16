@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="./vendor/phpunit/phpunit/phpunit.xsd"
+         bootstrap="vendor/autoload.php"
+         colors="true"
+         beStrictAboutTestsThatDoNotTestAnything="false"
+         backupGlobals="false"
+>
+    <testsuites>
+        <testsuite name="Tests">
+            <directory suffix="Test.php">./tests</directory>
+        </testsuite>
+    </testsuites>
+    <php>
+        <ini name="error_reporting" value="-1" />
+        <env name="SYMFONY_DEPRECATIONS_HELPER" value="weak"/>
+        <server name="KERNEL_CLASS" value="AppKernel" />
+    </php>
+</phpunit>
