@@ -19,10 +19,10 @@ You need to download and install PHP extension [EUSPHPE](https://iit.com.ua/down
 7. Open certificate directory (for example */data/certificates*) and unpack [this archive](https://drive.google.com/file/d/1vkN_RdXapHp0n0gHU52v6i6yN90c01f5/view?usp=sharing) inside it.
 8.Restart FPM **`service php8.0-fpm restart`**
 
-###Optional:
+### Optional:
 Install [EUSPHPE stubs](https://github.com/andrew-svirin/phpstorm-stubs) for IDE
 
-##Second step: 
+### Second step: 
 `composer require amsi/bankid-api`
 
 ## Usage example
